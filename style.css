@@ -844,3 +844,27 @@ body.darkmode .footer-bottom {
   transform: scale(1.05);
 }
 
+/* Mobile nav fix */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  /* Space so theme buttons don't overlap page content */
+  body {
+    padding-bottom: 80px;
+  }
+}
