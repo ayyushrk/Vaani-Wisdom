@@ -825,3 +825,22 @@ body.darkmode .footer-bottom {
     justify-content: center;
   }
 }
+
+/* ============ UPDATED ABOUT LOGO STYLING ============ */
+.about-logo {
+  width: 200px;           /* Increased size to 200px for more prominence */
+  height: 200px;          /* Matching height to create a perfect square */
+  border-radius: 40px;    /* Rounded edges (increase this number for more roundness) */
+  margin-bottom: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;      /* Ensures image fills the rounded area without stretching */
+  transition: filter 0.6s ease, transform 0.3s ease;
+}
+
+/* Optional: Add a subtle hover effect to make it feel interactive */
+.about-logo:hover {
+  transform: scale(1.05);
+}
+
