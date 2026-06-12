@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>वाणी | Vaani — Voice of Wisdom</title>
+    <link href="https://fonts.googleapis.com/css?family=Tiro+Devanagari+Sanskrit&family=Cinzel:wght@600;700&family=EB+Garamond:ital@0;1&family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="manuscript"> 
+    <nav>
+        <img src="images/logo.png" alt="Vaani Logo" class="logo">
+        <ul>
+            <li><a href="#" onclick="resetToDailyView(event)">Home</a></li>
+            <li><a href="#" id="search-trigger">Search</a></li>
+            <li><a href="#about">About</a></li>
+         
+        </ul>
+    </nav>
+
+    
+    <div class="search-container" id="search-panel">
+        <input type="text" id="shloka-search" placeholder="🔍 Search shlokas by words, translations, or tags..." oninput="handleSearch()">
+        <div id="search-results" class="search-results-dropdown"></div>
+    </div>
+
+    <div class="theme-switcher">
+        <button class="theme-icon" onclick="setTheme('temple', this)">🛕<span class="tooltip">Temple</span></button>
+        <button class="theme-icon active" onclick="setTheme('manuscript', this)">📜<span class="tooltip">Manuscript</span></button>
+        <button class="theme-icon" onclick="setTheme('modern', this)">✨<span class="tooltip">Modern</span></button>
+        <button class="theme-icon" onclick="setTheme('darkmode', this)">🌙<span class="tooltip">Dark Mode</span></button>
+    </div>
+
+    
+    <section class="shloka-of-day">
+        <h2 class="section-title" id="display-title">Shloka of the Day</h2>
+        
+        <div class="card" id="card">
+            <div class="sanskrit-text" id="sanskrit"></div>
+            <div class="transliteration" id="translit"></div>
+            <div class="meaning" id="meaning"></div>
+            <div class="tags" id="tags"></div>
+            <div class="btn-row">
+                <button class="next-btn" id="next-btn" onclick="showRandom()">Next Wisdom →</button>
+                <button class="fav-btn" onclick="toggleFavorite()">♡</button>
+            </div>
+        </div>
+
+        <div class="shlokas-grid-view" id="shlokas-grid" style="display: none;"></div>
+    </section>
+
+    <section class="view-all" id="view-all-section">
+        <a href="#" class="view-all-btn" onclick="triggerViewAll(event)">View All Shlokas →</a>
+    </section>
+
+    <section class="contribute">
+        <h2 class="section-title">Contribute a Shloka</h2>
+        <p class="contribute-text">Know a meaningful shloka that's not here yet? Share it with us and help grow this collection of wisdom.</p>
+        <a href="https://forms.gle/kWLMuH9KysfEF6s67" target="_blank" class="contribute-btn">Submit a Shloka</a>
+    </section>
+
+    <hr class="section-divider">
+
+   
+    <section id="about" class="about-section">
+        <div class="content-wrapper">
+            <h2 class="section-title">About Vaani</h2>
+            <p class="about-lead">Preserving and passing down timeless repositories of classical Sanskrit wisdom for the modern digital era.</p>
+            <p class="about-body">Vaani is an open digital library created to archive poetic philosophical treasures, including classic Subhashitas, Upanishadic prayers, and verses from the Bhagavad Gita. By providing clean english transliterations, accessible translations, and smart topical filtering tags, we aim to bridge ancient moral ethics with your daily life choices.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-logo-text">वाणी | Vaani</span>
+                    <p class="footer-tagline">Preserving the timeless resonance of classical Sanskrit wisdom, Upanishadic prayers, and righteous Dharma.</p>
+                </div>
+                
+                <div class="footer-nav-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#" onclick="resetToDailyView(event)">Home Portal</a></li>
+                        <li><a href="#about">About Project</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-meta-col">
+                    <h4>Ecosystem</h4>
+                    <p class="author-tag">Curated by <strong>Ayush R Kumar</strong></p>
+                    <div class="footer-socials">
+                        <a href="https://ayushrk.vercel.app" target="_blank" class="footer-link-item">Portfolio Portfolio</a>
+                        <span class="link-divider">•</span>
+                        <a href="https://github.com/ayyushrk" target="_blank" class="footer-link-item">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vaani Wisdom. Handcrafted with reverence. Let the knowledge of sanskrit be spread to everyone.</p>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
