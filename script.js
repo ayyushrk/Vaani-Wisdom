@@ -848,6 +848,11 @@ function resetToDailyView(e) {
   document.getElementById('view-all-section').style.display = 'block';
   loadDailyShloka();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('history-panel').style.display = 'none';
+document.querySelector('.shloka-of-day').style.display = 'block';
+document.querySelector('.contribute').style.display = 'block';
+document.querySelector('.about-section').style.display = 'block';
+document.querySelector('.view-all').style.display = 'block';
 }
 
 function handleSearch() {
@@ -969,41 +974,5 @@ function setTheme(theme, btn) {
   localStorage.setItem('vaani_theme', theme);
 }
 
-// =====================================================
-// INTRO ANIMATION SEQUENCE — Nataraja Curtain Reveal
-// =====================================================
 
-function runIntroAnimation() {
-  const overlay = document.getElementById('intro-overlay');
 
-  if (!overlay) return;
-
-  // Skip animation if already shown this session
-  if (sessionStorage.getItem('vaani_intro_shown')) {
-    overlay.classList.add('done');
-    return;
-  }
-
-  // Step 1: Open curtains
-  setTimeout(() => {
-    overlay.classList.add('open');
-  }, 400);
-
-  // Step 2: Reveal Nataraja + text
-  setTimeout(() => {
-    overlay.classList.add('reveal');
-  }, 1200);
-
-  // Step 3: Blur + fade out Nataraja
-  setTimeout(() => {
-    overlay.classList.add('fadeout');
-  }, 3000);
-
-  // Step 4: Remove overlay
-  setTimeout(() => {
-    overlay.classList.add('done');
-    sessionStorage.setItem('vaani_intro_shown', 'true');
-  }, 4000);
-}
-
-window.addEventListener('DOMContentLoaded', runIntroAnimation);
