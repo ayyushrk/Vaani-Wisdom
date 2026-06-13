@@ -968,3 +968,42 @@ function setTheme(theme, btn) {
   btn.classList.add('active');
   localStorage.setItem('vaani_theme', theme);
 }
+
+// =====================================================
+// INTRO ANIMATION SEQUENCE — Nataraja Curtain Reveal
+// =====================================================
+
+function runIntroAnimation() {
+  const overlay = document.getElementById('intro-overlay');
+
+  if (!overlay) return;
+
+  // Skip animation if already shown this session
+  if (sessionStorage.getItem('vaani_intro_shown')) {
+    overlay.classList.add('done');
+    return;
+  }
+
+  // Step 1: Open curtains
+  setTimeout(() => {
+    overlay.classList.add('open');
+  }, 400);
+
+  // Step 2: Reveal Nataraja + text
+  setTimeout(() => {
+    overlay.classList.add('reveal');
+  }, 1200);
+
+  // Step 3: Blur + fade out Nataraja
+  setTimeout(() => {
+    overlay.classList.add('fadeout');
+  }, 3000);
+
+  // Step 4: Remove overlay
+  setTimeout(() => {
+    overlay.classList.add('done');
+    sessionStorage.setItem('vaani_intro_shown', 'true');
+  }, 4000);
+}
+
+window.addEventListener('DOMContentLoaded', runIntroAnimation);
